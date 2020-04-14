@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: black;
+            }
+            h1{
+                background-color: blanchedalmond;
+                align-self: center;
+                background-attachment: center;
+                text-align: center;
+            }
+            button{
+                animation: infinite;
+                background-color: darkgrey;
+                border-style: groove;
+                text-align: center;
+                padding-right:3%;
+                padding-left: 3%;
+                margin-left: 0.5cm;
+                margin-top: 10%;
+            }
+            h2{
+                font-size:300%;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1 id="demo"></h>
+        <script>
+
+           var k=1,m=0,s=0,s2=0,name=' ';
+              magic=[{a:['A','B','C','D','E']},{a:['F','G','H','I','J']},{a:['K','L','M','N','O',]},{a:['P','Q','R','S','T']},{a:['U','V','W','X','Y']},{a:['Z','.','*','#','&']}];
+              mag=[{b:[]},{b:[]},{b:[]},{b:[]},{b:[]}];
+        function funnum(n)
+        {
+            k=k+1;
+            document.getElementById("demo").innerHTML="press the botton on which  "+k+"   letter is present<br>";
+            if(s==1)
+            {
+                 name=name+mag[n].b[s2];
+                 s2=s2+1;
+                 return;
+            }
+            for(i=0;i<5;i++)
+            {
+                mag[i].b[m]=magic[n].a[i];
+            }
+            m=m+1;
+            
+        }
+        function fnset()
+        {
+              if(s==1)
+              {
+                  fnset2();
+                  return;
+              }
+            s=s+1;
+            var a=[' ',' ',' ',' ',' ',' '];
+            for(i=0;i<5;i++)
+            {
+                for(j=0;j<mag[0].b.length;j++)
+                {
+                    a[i]=a[i]+mag[i].b[j]+"  ";
+                }
+            }
+            window.alert(" ONCE MORE ANSWER FOR THIS QUESTIONS");
+            k=1;
+            document.getElementById("demo").innerHTML="<h1 style='font-size:150%;background-color: red;'>press the botton on which "+k+"   letter is present<br></h1>";
+            document.getElementById("k1").innerHTML=a[0];
+            document.getElementById("k2").innerHTML=a[1];
+            document.getElementById("k3").innerHTML=a[2];
+            document.getElementById("k4").innerHTML=a[3];
+            document.getElementById("k5").innerHTML=a[4];
+            document.getElementById("k6").innerHTML="CLICK ON SUBMIT";
+            
+        }   
+         document.getElementById("demo").innerHTML="press the botton on which  "+k+"   letter is present<br>";
+        function fnset2()
+        {
+            document.write(" <h1 style='font-size:300%;background-color: peachpuff;'>WAIT A SECOUND<br> YOUR MAGIC NAME IS :<br><br><h1>");
+            document.write("<marquee><h1 style='font-size:400%;'>"+name+"</h1></marquee>");
+        }   
+    </script>
+    <h1 id="demo"></h1>
+    <button style="margin-left:20%;" type="button" onclick="funnum(0)"><h2 id="k1">A B C D E</h2></button>
+    <button type="button" onclick="funnum(1)"><h2 id="k2">F G H I J</h2></button><br><br>
+    <button type="button" onclick="funnum(2)" style="margin-left:20%;"><h2 id="k3">K L M N O</h2></button>
+    <button type="button" onclick="funnum(3)"><h2 id="k4">P Q R S T</h2></button><br><br>
+    <button type="button" onclick="funnum(4)" style="margin-left:20%;"><h2 id="k5">U V W X Y</h2> </button>
+    <button type="button" onclick="funnum(5)"><h2 id="k6" >Z . * # &</h2> </button><br><br>
+ <button  style="background-color:greenyellow;margin-left:20%;" type="button" onclick="fnset()"><h2> SUBMIT</h2> </button>
+ <button  style="background-color: darkred;" type="button" onclick="fnset()"><h2> RESTART</h2> </button>
+</body>
+</html>
